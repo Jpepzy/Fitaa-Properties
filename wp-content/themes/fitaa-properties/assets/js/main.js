@@ -178,9 +178,9 @@
 		var barFill = $('[data-tour-bar]');
 		var rooms = $$('[data-room]', track);
 		var n = rooms.length;
-		var STEP = 62;            /* degrees of turn between rooms */
+		var STEP = 52;            /* degrees of turn between rooms */
 		var RADIUS = 560;         /* column radius in px */
-		var DROP = 70;            /* vertical descent per room in px */
+		var DROP = 215;           /* vertical descent per room in px */
 		var state = { p: 0 };
 
 		tour.classList.add('tour--helix');
@@ -194,9 +194,8 @@
 				gsap.set(room, {
 					rotationY: a * STEP,
 					y: a * DROP,
-					scale: 1 - Math.min(abs, 2) * 0.06,
-					opacity: Math.max(0, 1 - abs * 0.42),
-					autoAlpha: abs > 2.4 ? 0 : Math.max(0, 1 - abs * 0.42),
+					scale: 1 - Math.min(abs, 3) * 0.05,
+					autoAlpha: abs > 3.2 ? 0 : Math.max(0, 1 - abs * 0.3),
 					zIndex: 100 - Math.round(abs * 10)
 				});
 				room.classList.toggle('is-front', abs < 0.5);
