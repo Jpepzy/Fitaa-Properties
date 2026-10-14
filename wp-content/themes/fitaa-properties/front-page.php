@@ -126,6 +126,7 @@ $details = array(
 				<p class="eyebrow">The tour</p>
 				<p class="tour__count"><span data-tour-current>01</span><span class="tour__sep">/</span><span>06</span></p>
 			</div>
+			<div class="tour__axis" aria-hidden="true"></div>
 			<div class="tour__track" data-tour-track>
 				<?php foreach ( $rooms as $room ) : ?>
 					<article class="room" data-room>

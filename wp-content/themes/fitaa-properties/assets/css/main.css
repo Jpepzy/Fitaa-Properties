@@ -137,6 +137,25 @@ p { margin: 0 0 1.2rem; color: #d5cbe6; }
 .tour__bar { height: 2px; background: var(--line); width: min(100% - 2 * var(--gut), 1240px); margin-inline: auto; }
 .tour__bar span { display: block; height: 100%; background: linear-gradient(90deg, var(--purple), var(--lilac)); transform: scaleX(0); transform-origin: left; }
 
+/* Tour — spiral column (applied by JS on desktop; mobile keeps the vertical stack) */
+.tour--helix .tour__sticky { position: relative; justify-content: center; }
+.tour--helix .tour__track { position: relative; display: block; width: 100%; height: min(74svh, 680px); padding: 0; perspective: 1700px; perspective-origin: 50% 40%; will-change: auto; }
+.tour--helix .room { position: absolute; left: 50%; top: 50%; width: min(360px, 28vw); display: flex; flex-direction: column; gap: 1.1rem; backface-visibility: hidden; will-change: transform, opacity; }
+.tour--helix .room__media { aspect-ratio: 4 / 5; max-height: 44svh; width: 100%; }
+.tour--helix .room__img--inset { display: none; }
+.tour--helix .room__img--main { box-shadow: 0 40px 90px -30px rgba(0,0,0,.95), 0 0 0 1px var(--line); }
+.tour--helix .room__copy { padding: 0; }
+.tour--helix .room__num { font-size: 2.6rem; margin-bottom: .2rem; }
+.tour--helix .room__title { font-size: 1.6rem; margin-bottom: .5rem; }
+.tour--helix .room__copy p { font-size: .9rem; margin: 0; max-width: none; }
+.tour--helix .room:not(.is-front) .room__copy { opacity: .55; }
+.tour__axis { display: none; }
+.tour--helix .tour__axis { display: block; position: absolute; left: 50%; top: 4.5rem; bottom: 3rem; width: 2px; transform: translateX(-50%); pointer-events: none;
+	background: linear-gradient(180deg, transparent, var(--purple-2) 18%, var(--purple) 82%, transparent); opacity: .55; box-shadow: 0 0 40px 6px rgba(139,61,255,.45); }
+.tour--helix .tour__axis::before { content: ""; position: absolute; left: 50%; top: 0; bottom: 0; width: 520px; transform: translateX(-50%);
+	background: repeating-linear-gradient(180deg, transparent 0 58px, rgba(169,107,255,.35) 58px 59px); background-position: 0 var(--axis-shift, 0);
+	-webkit-mask: radial-gradient(ellipse 50% 50% at 50% 50%, #000 0%, transparent 72%); mask: radial-gradient(ellipse 50% 50% at 50% 50%, #000 0%, transparent 72%); }
+
 /* Bed toggle */
 .bed { background: linear-gradient(180deg, var(--black), #12091f 55%, var(--black)); }
 .bed__grid { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(2rem, 6vw, 5rem); align-items: center; }

@@ -167,7 +167,7 @@
 		});
 	});
 
-	/* ---------- Tour: pinned horizontal scroll-through of the rooms ---------- */
+	/* ---------- Tour: rooms on a spiral column that turns and descends as you scroll ---------- */
 	var mm = gsap.matchMedia();
 	mm.add('(min-width: 961px)', function () {
 		var tour = $('[data-tour]');
@@ -177,35 +177,52 @@
 		var current = $('[data-tour-current]');
 		var barFill = $('[data-tour-bar]');
 		var rooms = $$('[data-room]', track);
-		var dist = function () { return Math.max(0, track.scrollWidth - window.innerWidth + 0.12 * window.innerWidth); };
+		var n = rooms.length;
+		var STEP = 62;            /* degrees of turn between rooms */
+		var RADIUS = 560;         /* column radius in px */
+		var DROP = 70;            /* vertical descent per room in px */
+		var state = { p: 0 };
 
-		var move = gsap.to(track, {
-			x: function () { return -dist(); }, ease: 'none',
-			scrollTrigger: {
-				trigger: tour, start: 'top top', end: function () { return '+=' + dist(); },
-				pin: sticky, scrub: 0.6, invalidateOnRefresh: true, anticipatePin: 1,
-				onUpdate: function (self) {
-					if (barFill) { barFill.style.transform = 'scaleX(' + self.progress + ')'; }
-					if (current) {
-						var n = Math.min(rooms.length, Math.floor(self.progress * rooms.length) + 1);
-						current.textContent = (n < 10 ? '0' : '') + n;
-					}
-				}
+		tour.classList.add('tour--helix');
+		gsap.set(rooms, { xPercent: -50, yPercent: -50, transformOrigin: '50% 50% ' + (-RADIUS) + 'px' });
+
+		function render() {
+			var pos = state.p * (n - 1);
+			rooms.forEach(function (room, i) {
+				var a = i - pos;
+				var abs = Math.abs(a);
+				gsap.set(room, {
+					rotationY: a * STEP,
+					y: a * DROP,
+					scale: 1 - Math.min(abs, 2) * 0.06,
+					opacity: Math.max(0, 1 - abs * 0.42),
+					autoAlpha: abs > 2.4 ? 0 : Math.max(0, 1 - abs * 0.42),
+					zIndex: 100 - Math.round(abs * 10)
+				});
+				room.classList.toggle('is-front', abs < 0.5);
+			});
+			if (barFill) { barFill.style.transform = 'scaleX(' + state.p + ')'; }
+			if (current) {
+				var k = Math.min(n, Math.round(pos) + 1);
+				current.textContent = (k < 10 ? '0' : '') + k;
+			}
+			tour.style.setProperty('--axis-shift', (-state.p * 240) + 'px');
+		}
+		render();
+
+		ScrollTrigger.create({
+			trigger: tour, start: 'top top', end: function () { return '+=' + (n * 0.75 * window.innerHeight); },
+			pin: sticky, scrub: true, invalidateOnRefresh: true, anticipatePin: 1,
+			snap: { snapTo: 1 / (n - 1), duration: { min: 0.3, max: 0.9 }, delay: 0.12, ease: 'power2.inOut' },
+			onUpdate: function (self) {
+				gsap.to(state, { p: self.progress, duration: 0.7, ease: 'power3.out', overwrite: true, onUpdate: render });
 			}
 		});
 
-		/* Depth: main photo drifts slower than its inset as each room passes. */
-		rooms.forEach(function (room) {
-			var main = $('.room__img--main', room);
-			var inset = $('.room__img--inset', room);
-			var common = { containerAnimation: move, trigger: room, start: 'left right', end: 'right left', scrub: true };
-			gsap.fromTo(main, { scale: 1.12 }, { scale: 1, ease: 'none', scrollTrigger: common });
-			gsap.fromTo(inset, { xPercent: 30, rotate: 5 }, { xPercent: -10, rotate: -2, ease: 'none', scrollTrigger: common });
-			gsap.from($$('.room__copy > *', room), {
-				y: 40, opacity: 0, stagger: 0.1, ease: 'power3.out', duration: 0.9,
-				scrollTrigger: { containerAnimation: move, trigger: room, start: 'left 70%', toggleActions: 'play none none reverse' }
-			});
-		});
+		return function () {
+			tour.classList.remove('tour--helix');
+			gsap.set(rooms, { clearProps: 'all' });
+		};
 	});
 
 	/* Mobile tour: simple vertical reveals. */

@@ -32,7 +32,7 @@ wp-content/themes/fitaa-properties/
   functions.php                     loads inc/*
   inc/                              setup, enqueue, customizer, helpers, landlord-form, pages, woocommerce
   header.php / footer.php
-  front-page.php                    Fitaa House Southampton homepage (exterior hero -> pinned room tour -> bed toggle -> details -> CTA -> landlord band)
+  front-page.php                    Fitaa House Southampton homepage (exterior hero -> pinned spiral-column room tour -> bed toggle -> details -> CTA -> landlord band)
   page-landlords.php                template "Landlords": benefits, how it works, comparison, FAQ, enquiry form
   page-stays.php                    template "Stays & Rentals": short stays + long-term rentals, WooCommerce product lists, enquiry form
   woocommerce.php                   single wrapper for all WooCommerce views
