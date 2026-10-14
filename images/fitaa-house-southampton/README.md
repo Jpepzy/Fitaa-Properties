@@ -7,6 +7,7 @@ Layout facts for anyone writing copy from these photos:
 - **Living room** with a velvet sofa bed (`living-room-sofa-bed.jpg` shows it opened).
 - **Full kitchen**: oven, hob, extractor, microwave, air fryer, fridge-freezer, washing machine.
 - Breakfast bar for two by the front windows; welcome snack and hot-drinks basket.
+- Bathroom: bath with rainfall shower and screen, heated towel rail, toiletries (shampoo, conditioner, body wash, hand soap) provided.
 - Utility cupboard with iron, ironing board, airer and hangers.
 - No smoking.
 
