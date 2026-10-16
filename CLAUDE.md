@@ -10,10 +10,10 @@ Git workflow: commit straight to `main` (the default branch). No PRs unless aske
 
 ## Brand
 
-- **Look:** black and purple. Near-black backgrounds, vivid violet accents, soft lilac for emphasis. Dark, calm, premium; lots of space.
-- **Palette** (CSS variables in `assets/css/main.css`): `--black #08050d`, `--ink #0f0a18`, `--panel #160e24`, `--purple #8b3dff`, `--purple-2 #a96bff`, `--lilac #d9c4ff`, `--white #f6f1ff`, `--muted #a79bbd`.
+- **Look:** light and warm, coloured from the Fitaa Homes logo. Warm-white pages, plum and magenta accents, near-black text like the logo's house outline. The photo hero, the room tour and the landlord band stay dark for contrast.
+- **Palette** (CSS variables in `assets/css/main.css`): `--bg #fbf8fb`, `--surface #f4eef5`, `--panel #ffffff`, `--text #1a1220`, `--text-2 #43384a`, `--muted #6e6275`, `--accent #5a0a6a` (logo plum), `--accent-2 #8e1fa8` (logo magenta), `--btn` (magenta to plum gradient). Dark sections (`.hero`, `.tour`, `.landlord-band`, the header over the homepage hero) redefine the same variables, so components just use the variables. Every text colour has been checked for at least 4.5:1 contrast on its background.
 - **Type:** Fraunces (light serif, italics for emphasis words) for display; Manrope for body and UI.
-- **Logo:** the real Fitaa Homes logo (purple Gye Nyame in a black house outline) lives in `images/brand/` (original as supplied) and the theme's `assets/img/brand/` (header mark, footer lockup, favicon). Never redraw or recolour the mark. It is a raster on an off-white background, so it always sits on a light tile (`.brand__mark`, `.site-footer__logo`), never straight on the dark page. A transparent SVG is still to come.
+- **Logo:** the real Fitaa Homes logo (purple Gye Nyame in a black house outline) lives in `images/brand/` (original as supplied) and the theme's `assets/img/brand/` (header mark, footer lockup, favicon). Never redraw or recolour the mark. It is a raster on an off-white background: in the header it sits on a small white tile (`.brand__mark`), in the light footer it sits straight on the page (`mix-blend-mode: multiply`). Never put it directly on a dark section. A transparent SVG is still to come.
 - **Voice:** warm, confident, plain English, British spelling. Short sentences. No hype or invented numbers.
 - **Motion:** scroll-driven and smooth (GSAP + ScrollTrigger + Lenis), always with a `prefers-reduced-motion` fallback and a vertical fallback for the pinned tour on screens under 961px.
 
