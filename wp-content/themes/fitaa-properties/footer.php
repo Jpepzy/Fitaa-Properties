@@ -2,6 +2,7 @@
 <footer class="site-footer">
 	<div class="container site-footer__grid">
 		<div>
+			<p class="site-footer__logo"><img src="<?php echo esc_url( FITAA_URI . '/assets/img/brand/fitaa-homes-logo.webp' ); ?>" width="591" height="503" alt="<?php esc_attr_e( 'Fitaa Homes', 'fitaa' ); ?>" loading="lazy" decoding="async"></p>
 			<p class="site-footer__brand">Fitaa <em>Properties</em></p>
 			<p class="site-footer__tag"><?php esc_html_e( 'Considered homes for short stays, long-term lets and landlords who want their property looked after.', 'fitaa' ); ?></p>
 		</div>

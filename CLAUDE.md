@@ -13,6 +13,7 @@ Git workflow: commit straight to `main` (the default branch). No PRs unless aske
 - **Look:** black and purple. Near-black backgrounds, vivid violet accents, soft lilac for emphasis. Dark, calm, premium; lots of space.
 - **Palette** (CSS variables in `assets/css/main.css`): `--black #08050d`, `--ink #0f0a18`, `--panel #160e24`, `--purple #8b3dff`, `--purple-2 #a96bff`, `--lilac #d9c4ff`, `--white #f6f1ff`, `--muted #a79bbd`.
 - **Type:** Fraunces (light serif, italics for emphasis words) for display; Manrope for body and UI.
+- **Logo:** the real Fitaa Homes logo (purple Gye Nyame in a black house outline) lives in `images/brand/` (original as supplied) and the theme's `assets/img/brand/` (header mark, footer lockup, favicon). Never redraw or recolour the mark. It is a raster on an off-white background, so it always sits on a light tile (`.brand__mark`, `.site-footer__logo`), never straight on the dark page. A transparent SVG is still to come.
 - **Voice:** warm, confident, plain English, British spelling. Short sentences. No hype or invented numbers.
 - **Motion:** scroll-driven and smooth (GSAP + ScrollTrigger + Lenis), always with a `prefers-reduced-motion` fallback and a vertical fallback for the pinned tour on screens under 961px.
 
