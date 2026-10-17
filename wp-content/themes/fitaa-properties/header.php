@@ -4,7 +4,7 @@
 <head>
 	<meta charset="<?php bloginfo( 'charset' ); ?>">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta name="theme-color" content="#08050d">
+	<meta name="theme-color" content="#fbf8fb">
 	<script>document.documentElement.classList.add('js');</script>
 	<?php wp_head(); ?>
 </head>
@@ -18,7 +18,7 @@
 			<?php if ( has_custom_logo() ) : ?>
 				<?php the_custom_logo(); ?>
 			<?php else : ?>
-				<span class="brand__mark" aria-hidden="true">F</span>
+				<span class="brand__mark" aria-hidden="true"><img src="<?php echo esc_url( FITAA_URI . '/assets/img/brand/fitaa-homes-mark-96.png' ); ?>" srcset="<?php echo esc_url( FITAA_URI . '/assets/img/brand/fitaa-homes-mark-192.png' ); ?> 2x" width="48" height="48" alt=""></span>
 				<span class="brand__text">Fitaa <em>Properties</em></span>
 			<?php endif; ?>
 		</a>

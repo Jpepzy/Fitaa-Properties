@@ -39,3 +39,13 @@ add_filter( 'body_class', function ( $classes ) {
 	$classes[] = 'fitaa-theme';
 	return $classes;
 } );
+
+/** Fall back to the Fitaa Homes mark as the favicon until a Site Icon is set in the Customizer. */
+add_action( 'wp_head', function () {
+	if ( has_site_icon() ) {
+		return;
+	}
+	$base = FITAA_URI . '/assets/img/brand/';
+	printf( '<link rel="icon" type="image/png" sizes="192x192" href="%s">' . "\n", esc_url( $base . 'fitaa-homes-mark-192.png' ) );
+	printf( '<link rel="apple-touch-icon" href="%s">' . "\n", esc_url( $base . 'fitaa-homes-mark-192.png' ) );
+}, 5 );
