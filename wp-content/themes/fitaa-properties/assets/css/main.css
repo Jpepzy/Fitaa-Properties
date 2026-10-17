@@ -355,39 +355,39 @@ p { margin: 0 0 1.2rem; color: var(--text-2); }
 .other__media { border-radius: 1.4rem; overflow: hidden; aspect-ratio: 4 / 3; box-shadow: var(--glow), 0 0 0 1px var(--line); }
 .other__media img { width: 100%; height: 118%; object-fit: cover; }
 
-/* ---- Booking widget + date picker ---- */
-.book { background: radial-gradient(70% 60% at 0% 0%, rgba(139,61,255,.2), transparent 70%), var(--ink); border-block: 1px solid var(--line); }
+/* ---- Booking widget + date picker (light surface, uses the theme variables) ---- */
+.book { background: radial-gradient(70% 60% at 0% 0%, rgba(142,31,168,.12), transparent 70%), var(--surface); border-block: 1px solid var(--line); }
 .book__grid { display: grid; grid-template-columns: .8fr 1.2fr; gap: clamp(2rem, 5vw, 5rem); align-items: start; }
 .book__intro { position: sticky; top: 7rem; }
 .legend { list-style: none; padding: 0; margin: 1.6rem 0 0; display: grid; gap: .6rem; font-size: .85rem; color: var(--muted); }
 .legend li { display: flex; align-items: center; gap: .7rem; }
 .legend__sw { width: 1.4rem; height: 1.4rem; border-radius: .4rem; display: inline-block; }
-.legend__sw--sel { background: linear-gradient(135deg, var(--purple), #6d28d9); }
-.legend__sw--range { background: rgba(139,61,255,.28); }
-.legend__sw--taken { background: repeating-linear-gradient(135deg, transparent 0 4px, rgba(167,155,189,.45) 4px 5px); box-shadow: inset 0 0 0 1px var(--line); }
-.booking { display: grid; gap: 1.1rem; padding: clamp(1.2rem, 3vw, 2.2rem); border-radius: 1.5rem; background: rgba(255,255,255,.03); border: 1px solid var(--line); backdrop-filter: blur(10px); min-width: 0; }
-.booking__prop { margin: 0; font: 400 1.5rem var(--serif); }
+.legend__sw--sel { background: var(--btn); }
+.legend__sw--range { background: rgba(142,31,168,.2); }
+.legend__sw--taken { background: repeating-linear-gradient(135deg, transparent 0 4px, rgba(110,98,117,.5) 4px 5px); box-shadow: inset 0 0 0 1px var(--line); }
+.booking { display: grid; gap: 1.1rem; padding: clamp(1.2rem, 3vw, 2.2rem); border-radius: 1.5rem; background: var(--panel); border: 1px solid var(--line); box-shadow: var(--glow); min-width: 0; }
+.booking__prop { margin: 0; font: 400 1.5rem var(--serif); color: var(--text); }
 .cal { display: none; min-width: 0; }
 .has-cal .cal { display: block; }
 .cal__nav { display: flex; justify-content: space-between; margin-bottom: .6rem; }
-.cal__btn { appearance: none; width: 2.5rem; height: 2.5rem; border-radius: 50%; border: 1px solid var(--line); background: transparent; color: var(--white); font-size: 1.1rem; cursor: pointer; transition: background .3s, border-color .3s; }
-.cal__btn:hover:not(:disabled) { background: rgba(139,61,255,.2); border-color: var(--purple-2); }
+.cal__btn { appearance: none; width: 2.5rem; height: 2.5rem; border-radius: 50%; border: 1px solid var(--line); background: transparent; color: var(--text); font-size: 1.1rem; cursor: pointer; transition: background .3s, border-color .3s; }
+.cal__btn:hover:not(:disabled) { background: var(--tint); border-color: var(--accent-2); }
 .cal__btn:disabled { opacity: .3; cursor: default; }
 .cal__months { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1.6rem; }
-.cal__title { font: 400 1.25rem var(--serif); margin: 0 0 .8rem; text-align: center; }
+.cal__title { font: 400 1.25rem var(--serif); margin: 0 0 .8rem; text-align: center; color: var(--text); }
 .cal__grid { display: grid; grid-template-columns: repeat(7, 1fr); row-gap: 2px; }
 .cal__dow { text-align: center; font: 600 .66rem var(--sans); letter-spacing: .12em; text-transform: uppercase; color: var(--muted); padding-bottom: .4rem; }
-.cal__day { appearance: none; border: 0; background: transparent; color: var(--white); font: 500 .9rem var(--sans); aspect-ratio: 1; display: grid; place-items: center; cursor: pointer; border-radius: .6rem; position: relative; font-variant-numeric: tabular-nums; transition: background .2s, color .2s; }
-.cal__day:hover:not(:disabled) { background: rgba(139,61,255,.28); }
+.cal__day { appearance: none; border: 0; background: transparent; color: var(--text); font: 500 .9rem var(--sans); aspect-ratio: 1; display: grid; place-items: center; cursor: pointer; border-radius: .6rem; position: relative; font-variant-numeric: tabular-nums; transition: background .2s, color .2s; }
+.cal__day:hover:not(:disabled):not(.is-start):not(.is-end) { background: rgba(142,31,168,.14); }
 .cal__day:disabled { cursor: default; }
-.cal__day.is-past { color: rgba(167,155,189,.35); }
-.cal__day.is-taken { color: rgba(167,155,189,.55); background: repeating-linear-gradient(135deg, transparent 0 5px, rgba(167,155,189,.25) 5px 6px); text-decoration: line-through; }
+.cal__day.is-past { color: rgba(110,98,117,.5); }
+.cal__day.is-taken { color: var(--muted); background: repeating-linear-gradient(135deg, transparent 0 5px, rgba(110,98,117,.25) 5px 6px); text-decoration: line-through; }
 .cal__day.is-taken:not(:disabled) { text-decoration: none; }
-.cal__day.is-range { background: rgba(139,61,255,.28); border-radius: 0; }
-.cal__day.is-hover-end { background: rgba(139,61,255,.45); }
-.cal__day.is-start, .cal__day.is-end { background: linear-gradient(135deg, var(--purple), #6d28d9); color: #fff; box-shadow: 0 0 24px rgba(139,61,255,.6); z-index: 1; }
+.cal__day.is-range { background: rgba(142,31,168,.16); border-radius: 0; }
+.cal__day.is-hover-end { background: rgba(142,31,168,.3); }
+.cal__day.is-start, .cal__day.is-end { background: var(--btn); color: #fff; box-shadow: 0 8px 22px -6px rgba(90,10,106,.6); z-index: 1; }
 .booking__summary { margin: 0; padding: .9rem 1rem; border-radius: .8rem; border: 1px dashed var(--line); color: var(--muted); font-size: .92rem; }
-.booking__summary.is-set { border-style: solid; border-color: var(--purple-2); color: var(--white); background: rgba(139,61,255,.14); }
+.booking__summary.is-set { border-style: solid; border-color: var(--accent-2); color: var(--text); background: var(--tint); }
 .booking .btn[disabled] { opacity: .45; cursor: not-allowed; transform: none; box-shadow: none; }
 .sa .hero__img { object-position: 50% 60%; }
 
