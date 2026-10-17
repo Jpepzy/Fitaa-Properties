@@ -395,3 +395,10 @@ p { margin: 0 0 1.2rem; color: var(--text-2); }
 	.other__inner, .book__grid { grid-template-columns: 1fr; }
 	.book__intro { position: static; }
 }
+
+
+/* ---- Social icons (shown only for networks set in the Customizer) ---- */
+.social { list-style: none; display: flex; flex-wrap: wrap; gap: .6rem; margin: 1.2rem 0 0; padding: 0; }
+.social__link { display: grid; place-items: center; width: 2.8rem; height: 2.8rem; border-radius: 50%; border: 1px solid var(--line); background: var(--panel); color: var(--accent); transition: transform .5s var(--ease), background .3s, color .3s, border-color .3s, box-shadow .3s; }
+.social__link:hover { background: var(--btn); color: #fff; border-color: transparent; transform: translateY(-3px); box-shadow: var(--glow); }
+.social__link:focus-visible { outline: 2px solid var(--accent-2); outline-offset: 3px; }

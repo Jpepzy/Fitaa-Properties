@@ -17,6 +17,7 @@ $state = isset( $_GET['enquiry'] ) ? sanitize_key( wp_unslash( $_GET['enquiry'] 
 			<p class="eyebrow" data-reveal><?php esc_html_e( 'Enquire', 'fitaa' ); ?></p>
 			<h2 class="display display--sm" data-split><?php echo fitaa_split_words( $args['heading'] ); // phpcs:ignore WordPress.Security.EscapeOutput ?></h2>
 			<?php if ( $args['intro'] ) : ?><p data-reveal><?php echo esc_html( $args['intro'] ); ?></p><?php endif; ?>
+			<?php fitaa_social_icons( 'social--contact' ); ?>
 			<ul class="contact-list" data-reveal>
 				<?php foreach ( fitaa_contact_links() as $link ) : ?>
 					<li><a href="<?php echo esc_url( $link[1] ); ?>"><?php echo esc_html( $link[0] ); ?></a></li>

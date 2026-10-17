@@ -56,7 +56,7 @@ wp-content/themes/fitaa-properties/
 
 1. Copy `wp-content/themes/fitaa-properties` into the site's `wp-content/themes/` and activate it. Activation creates the **Fitaa House Southampton** (front page), **Landlords** and **Stays & Rentals** pages and a primary menu.
 2. Install WooCommerce. Create product categories with slugs `short-stays` and `long-term-rentals`; products in them are listed on the Stays page automatically.
-3. Fill in the Customizer contact section so footer links and the enquiry/booking email recipient work.
+3. Fill in the Customizer contact section so footer links and the enquiry/booking email recipient work. Social icons (Instagram, Facebook, TikTok, X, YouTube, LinkedIn, WhatsApp) appear in the footer and contact block only for networks whose link is filled in there.
 4. Bookings: guests send a request from the date picker (no online payment). It appears under **Bookings** as Pending and emails the team; set it to **Confirmed** (or Declined) to email the guest. Only Confirmed bookings block dates. To block dates for an Airbnb stay or owner use, add a booking with status Confirmed.
 
 ## Conventions

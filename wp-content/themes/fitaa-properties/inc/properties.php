@@ -64,7 +64,6 @@ function fitaa_properties() {
 				array( 'bathroom-towel-rail', 'Heated towel rail and window' ),
 				array( 'kitchen-microwave-kettle', 'Microwave and kettle on the worktop' ),
 				array( 'bedroom-orange-towel-detail', 'Towel on the orange bedding' ),
-				array( 'kitchen-sink-cupboard', 'Kitchen sink with cupboard below' ),
 				array( 'kitchen-hob-extractor', 'Gas hob and cooker hood' ),
 			),
 		),

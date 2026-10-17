@@ -13,6 +13,11 @@ add_action( 'customize_register', function ( WP_Customize_Manager $wp_customize 
 		'fitaa_phone'     => array( __( 'Phone number', 'fitaa' ), 'sanitize_text_field' ),
 		'fitaa_whatsapp'  => array( __( 'WhatsApp number (digits, with country code)', 'fitaa' ), 'sanitize_text_field' ),
 		'fitaa_instagram' => array( __( 'Instagram URL', 'fitaa' ), 'esc_url_raw' ),
+		'fitaa_facebook'  => array( __( 'Facebook URL', 'fitaa' ), 'esc_url_raw' ),
+		'fitaa_tiktok'    => array( __( 'TikTok URL', 'fitaa' ), 'esc_url_raw' ),
+		'fitaa_x'         => array( __( 'X (Twitter) URL', 'fitaa' ), 'esc_url_raw' ),
+		'fitaa_youtube'   => array( __( 'YouTube URL', 'fitaa' ), 'esc_url_raw' ),
+		'fitaa_linkedin'  => array( __( 'LinkedIn URL', 'fitaa' ), 'esc_url_raw' ),
 		'fitaa_lead_to'   => array( __( 'Landlord enquiries go to (email)', 'fitaa' ), 'sanitize_email' ),
 	);
 
