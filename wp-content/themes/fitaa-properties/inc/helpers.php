@@ -46,10 +46,9 @@ function fitaa_stays_url() {
 	return fitaa_page_url( 'page-stays.php', 'stays' );
 }
 
-/** Where "Book" buttons for Fitaa House Southampton point. */
-function fitaa_booking_url() {
-	$url = get_theme_mod( 'fitaa_booking', '' );
-	return $url ? $url : fitaa_stays_url() . '#enquire';
+/** Where "Book" buttons point: the on-page booking section, or a property's page. */
+function fitaa_booking_url( $property = '' ) {
+	return $property ? fitaa_property_url( $property ) . '#book' : fitaa_stays_url() . '#book';
 }
 
 /** Direct contact links from Customizer values. Returns array of [label, href]. */

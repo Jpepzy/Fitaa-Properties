@@ -74,17 +74,19 @@ function fitaa_stays_products( $cat_slug ) {
 					<li>Full kitchen with washing machine</li>
 					<li>Flexible bed set-ups</li>
 				</ul>
-				<a class="btn btn--solid" href="#enquire" data-reveal>Enquire about a stay</a>
+				<a class="btn btn--solid" href="#book" data-reveal>Check dates and book</a>
 			</div>
 		</div>
 		<div class="container">
 			<h3 class="listing-head">Available stays</h3>
 			<?php if ( ! fitaa_stays_products( 'short-stays' ) ) : ?>
 				<div class="listing-grid" data-reveal-group>
-					<a class="listing" href="<?php echo esc_url( home_url( '/' ) ); ?>">
-						<span class="listing__media"><?php fitaa_photo( 'exterior-ibex-house-entrance', 'Ibex House entrance' ); ?></span>
-						<span class="listing__body"><span class="listing__title">Fitaa House Southampton</span><span class="listing__price">One bedroom &middot; Ibex House</span></span>
-					</a>
+					<?php foreach ( fitaa_properties() as $slug => $p ) : ?>
+						<a class="listing" href="<?php echo esc_url( fitaa_property_url( $slug ) ); ?>">
+							<span class="listing__media"><?php fitaa_prop_photo( $p['folder'], $p['rooms'][1]['img'], $p['name'] ); ?></span>
+							<span class="listing__body"><span class="listing__title"><?php echo esc_html( $p['name'] ); ?></span><span class="listing__price"><?php echo 'sa-endeavours' === $slug ? 'Two bedrooms' : 'One bedroom &middot; Ibex House'; ?></span></span>
+						</a>
+					<?php endforeach; ?>
 				</div>
 			<?php endif; ?>
 		</div>
@@ -115,6 +117,14 @@ function fitaa_stays_products( $cat_slug ) {
 			<?php endif; ?>
 		</div>
 	</section>
+
+	<?php
+	get_template_part( 'template-parts/booking-widget', null, array(
+		'property'   => 'fitaa-house-southampton',
+		'selectable' => true,
+		'heading'    => 'Pick a home and your dates.',
+	) );
+	?>
 
 	<section class="landlord-band">
 		<div class="container landlord-band__inner">

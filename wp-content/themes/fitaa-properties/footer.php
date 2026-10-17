@@ -9,6 +9,7 @@
 			<h3 class="site-footer__h"><?php esc_html_e( 'Explore', 'fitaa' ); ?></h3>
 			<ul class="site-footer__list">
 				<li><a href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php esc_html_e( 'Fitaa House Southampton', 'fitaa' ); ?></a></li>
+				<li><a href="<?php echo esc_url( fitaa_sa_url() ); ?>"><?php esc_html_e( 'SA Endeavours', 'fitaa' ); ?></a></li>
 				<li><a href="<?php echo esc_url( fitaa_stays_url() ); ?>"><?php esc_html_e( 'Stays & Rentals', 'fitaa' ); ?></a></li>
 				<li><a href="<?php echo esc_url( fitaa_landlords_url() ); ?>"><?php esc_html_e( 'For landlords', 'fitaa' ); ?></a></li>
 			</ul>

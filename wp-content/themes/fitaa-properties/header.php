@@ -36,6 +36,7 @@
 				?>
 				<ul class="site-nav__list">
 					<li><a href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php esc_html_e( 'Fitaa House', 'fitaa' ); ?></a></li>
+					<li><a href="<?php echo esc_url( fitaa_sa_url() ); ?>"><?php esc_html_e( 'SA Endeavours', 'fitaa' ); ?></a></li>
 					<li><a href="<?php echo esc_url( fitaa_stays_url() ); ?>"><?php esc_html_e( 'Stays & Rentals', 'fitaa' ); ?></a></li>
 					<li><a href="<?php echo esc_url( fitaa_landlords_url() ); ?>"><?php esc_html_e( 'Landlords', 'fitaa' ); ?></a></li>
 				</ul>

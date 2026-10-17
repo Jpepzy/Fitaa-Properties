@@ -140,11 +140,11 @@ p { margin: 0 0 1.2rem; color: #d5cbe6; }
 /* Tour — spiral column (applied by JS on desktop; mobile keeps the vertical stack) */
 .tour--helix .tour__sticky { position: relative; justify-content: center; }
 .tour--helix .tour__track { position: relative; display: block; width: 100%; height: min(74svh, 680px); padding: 0; perspective: 1700px; perspective-origin: 50% 40%; will-change: auto; }
-.tour--helix .room { position: absolute; left: 50%; top: 50%; width: min(360px, 28vw); display: flex; flex-direction: column; gap: 1.1rem; backface-visibility: hidden; will-change: transform, opacity; }
+.tour--helix .room { position: absolute; left: 50%; top: 50%; width: min(380px, 29vw); display: flex; flex-direction: column; gap: 1.1rem; backface-visibility: hidden; will-change: transform, opacity; }
 .tour--helix .room__media { aspect-ratio: 4 / 5; max-height: 44svh; width: 100%; }
-.tour--helix .room__img--inset { display: none; }
+.tour--helix .room__img--inset { right: -9%; bottom: -9%; width: 42%; border-width: 5px; }
 .tour--helix .room__img--main { box-shadow: 0 40px 90px -30px rgba(0,0,0,.95), 0 0 0 1px var(--line); }
-.tour--helix .room__copy { padding: 0; }
+.tour--helix .room__copy { padding: 0 36% 0 0; }
 .tour--helix .room__num { font-size: 2.6rem; margin-bottom: .2rem; }
 .tour--helix .room__title { font-size: 1.6rem; margin-bottom: .5rem; }
 .tour--helix .room__copy p { font-size: .9rem; margin: 0; max-width: none; }
@@ -321,4 +321,51 @@ p { margin: 0 0 1.2rem; color: #d5cbe6; }
 	*, *::before, *::after { animation-duration: .01ms !important; transition-duration: .01ms !important; }
 	.js [data-reveal], .js [data-hero-in] { opacity: 1; }
 	.detail__img { transform: none; }
+}
+
+
+/* ---- Property cross-link band ---- */
+.other__inner { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(2rem, 6vw, 5rem); align-items: center; }
+.other__media { border-radius: 1.4rem; overflow: hidden; aspect-ratio: 4 / 3; box-shadow: var(--glow), 0 0 0 1px var(--line); }
+.other__media img { width: 100%; height: 118%; object-fit: cover; }
+
+/* ---- Booking widget + date picker ---- */
+.book { background: radial-gradient(70% 60% at 0% 0%, rgba(139,61,255,.2), transparent 70%), var(--ink); border-block: 1px solid var(--line); }
+.book__grid { display: grid; grid-template-columns: .8fr 1.2fr; gap: clamp(2rem, 5vw, 5rem); align-items: start; }
+.book__intro { position: sticky; top: 7rem; }
+.legend { list-style: none; padding: 0; margin: 1.6rem 0 0; display: grid; gap: .6rem; font-size: .85rem; color: var(--muted); }
+.legend li { display: flex; align-items: center; gap: .7rem; }
+.legend__sw { width: 1.4rem; height: 1.4rem; border-radius: .4rem; display: inline-block; }
+.legend__sw--sel { background: linear-gradient(135deg, var(--purple), #6d28d9); }
+.legend__sw--range { background: rgba(139,61,255,.28); }
+.legend__sw--taken { background: repeating-linear-gradient(135deg, transparent 0 4px, rgba(167,155,189,.45) 4px 5px); box-shadow: inset 0 0 0 1px var(--line); }
+.booking { display: grid; gap: 1.1rem; padding: clamp(1.2rem, 3vw, 2.2rem); border-radius: 1.5rem; background: rgba(255,255,255,.03); border: 1px solid var(--line); backdrop-filter: blur(10px); min-width: 0; }
+.booking__prop { margin: 0; font: 400 1.5rem var(--serif); }
+.cal { display: none; min-width: 0; }
+.has-cal .cal { display: block; }
+.cal__nav { display: flex; justify-content: space-between; margin-bottom: .6rem; }
+.cal__btn { appearance: none; width: 2.5rem; height: 2.5rem; border-radius: 50%; border: 1px solid var(--line); background: transparent; color: var(--white); font-size: 1.1rem; cursor: pointer; transition: background .3s, border-color .3s; }
+.cal__btn:hover:not(:disabled) { background: rgba(139,61,255,.2); border-color: var(--purple-2); }
+.cal__btn:disabled { opacity: .3; cursor: default; }
+.cal__months { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1.6rem; }
+.cal__title { font: 400 1.25rem var(--serif); margin: 0 0 .8rem; text-align: center; }
+.cal__grid { display: grid; grid-template-columns: repeat(7, 1fr); row-gap: 2px; }
+.cal__dow { text-align: center; font: 600 .66rem var(--sans); letter-spacing: .12em; text-transform: uppercase; color: var(--muted); padding-bottom: .4rem; }
+.cal__day { appearance: none; border: 0; background: transparent; color: var(--white); font: 500 .9rem var(--sans); aspect-ratio: 1; display: grid; place-items: center; cursor: pointer; border-radius: .6rem; position: relative; font-variant-numeric: tabular-nums; transition: background .2s, color .2s; }
+.cal__day:hover:not(:disabled) { background: rgba(139,61,255,.28); }
+.cal__day:disabled { cursor: default; }
+.cal__day.is-past { color: rgba(167,155,189,.35); }
+.cal__day.is-taken { color: rgba(167,155,189,.55); background: repeating-linear-gradient(135deg, transparent 0 5px, rgba(167,155,189,.25) 5px 6px); text-decoration: line-through; }
+.cal__day.is-taken:not(:disabled) { text-decoration: none; }
+.cal__day.is-range { background: rgba(139,61,255,.28); border-radius: 0; }
+.cal__day.is-hover-end { background: rgba(139,61,255,.45); }
+.cal__day.is-start, .cal__day.is-end { background: linear-gradient(135deg, var(--purple), #6d28d9); color: #fff; box-shadow: 0 0 24px rgba(139,61,255,.6); z-index: 1; }
+.booking__summary { margin: 0; padding: .9rem 1rem; border-radius: .8rem; border: 1px dashed var(--line); color: var(--muted); font-size: .92rem; }
+.booking__summary.is-set { border-style: solid; border-color: var(--purple-2); color: var(--white); background: rgba(139,61,255,.14); }
+.booking .btn[disabled] { opacity: .45; cursor: not-allowed; transform: none; box-shadow: none; }
+.sa .hero__img { object-position: 50% 60%; }
+
+@media (max-width: 960px) {
+	.other__inner, .book__grid { grid-template-columns: 1fr; }
+	.book__intro { position: static; }
 }

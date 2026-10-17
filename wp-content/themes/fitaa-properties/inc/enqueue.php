@@ -17,6 +17,7 @@ add_action( 'wp_enqueue_scripts', function () {
 	wp_enqueue_script( 'fitaa-gsap', FITAA_URI . '/assets/js/vendor/gsap.min.js', array(), '3.12.5', true );
 	wp_enqueue_script( 'fitaa-scrolltrigger', FITAA_URI . '/assets/js/vendor/ScrollTrigger.min.js', array( 'fitaa-gsap' ), '3.12.5', true );
 	wp_enqueue_script( 'fitaa-lenis', FITAA_URI . '/assets/js/vendor/lenis.min.js', array(), '1.1.20', true );
+	wp_register_script( 'fitaa-booking', FITAA_URI . '/assets/js/booking.js', array(), FITAA_VERSION, true );
 	wp_enqueue_script( 'fitaa-main', FITAA_URI . '/assets/js/main.js', array( 'fitaa-gsap', 'fitaa-scrolltrigger', 'fitaa-lenis' ), FITAA_VERSION, true );
 } );
 

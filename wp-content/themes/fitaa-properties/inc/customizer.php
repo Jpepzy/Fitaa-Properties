@@ -13,7 +13,6 @@ add_action( 'customize_register', function ( WP_Customize_Manager $wp_customize 
 		'fitaa_phone'     => array( __( 'Phone number', 'fitaa' ), 'sanitize_text_field' ),
 		'fitaa_whatsapp'  => array( __( 'WhatsApp number (digits, with country code)', 'fitaa' ), 'sanitize_text_field' ),
 		'fitaa_instagram' => array( __( 'Instagram URL', 'fitaa' ), 'esc_url_raw' ),
-		'fitaa_booking'   => array( __( 'Booking URL for Fitaa House Southampton (optional)', 'fitaa' ), 'esc_url_raw' ),
 		'fitaa_lead_to'   => array( __( 'Landlord enquiries go to (email)', 'fitaa' ), 'sanitize_email' ),
 	);
 

@@ -5,74 +5,6 @@
  * @package fitaa
  */
 get_header();
-
-$rooms = array(
-	array(
-		'num'   => '01',
-		'title' => 'Your front door',
-		'text'  => 'A private entrance off a quiet communal hallway. Self-contained, and yours for the length of your stay.',
-		'img'   => 'flat-front-door',
-		'alt'   => 'The front door of Flat 1',
-		'img2'  => 'communal-hallway-flat-door',
-		'alt2'  => 'The communal hallway leading to the flat door',
-	),
-	array(
-		'num'   => '02',
-		'title' => 'Living room',
-		'text'  => 'Deep blue velvet, a wall-mounted TV and warm lamp light. The sofa opens into an extra bed when you need one.',
-		'img'   => 'living-room-velvet-sofa',
-		'alt'   => 'Living room with a blue velvet sofa, rug and wall-mounted TV',
-		'img2'  => 'living-room-sofa-bed',
-		'alt2'  => 'The velvet sofa opened out as a sofa bed',
-	),
-	array(
-		'num'   => '03',
-		'title' => 'Full kitchen',
-		'text'  => 'Oven, hob, extractor, microwave, air fryer, fridge-freezer and washing machine. Cook properly, not just reheat.',
-		'img'   => 'kitchen-full-view',
-		'alt'   => 'Fully equipped white kitchen with black handles and slate floor',
-		'img2'  => 'breakfast-bar-windows',
-		'alt2'  => 'Breakfast bar for two by the front windows',
-	),
-	array(
-		'num'   => '04',
-		'title' => 'Bedroom',
-		'text'  => 'Navy linen, bedside lamps and a dressing table. The bed is zip-and-link: two singles, or one large double.',
-		'img'   => 'bedroom-as-double',
-		'alt'   => 'Bedroom with a navy double bed, towels and pendant light',
-		'img2'  => 'bedroom-dressing-table',
-		'alt2'  => 'Dressing table with round mirror in the bedroom',
-	),
-	array(
-		'num'   => '05',
-		'title' => 'Bathroom',
-		'text'  => 'A bath with rainfall shower and screen, heated towel rail, and shampoo, conditioner, body wash and hand soap provided.',
-		'img'   => 'bathroom-rainfall-shower',
-		'alt'   => 'Bathroom with a rainfall shower over the bath',
-		'img2'  => 'bathroom-sink-mirror',
-		'alt2'  => 'Bathroom sink and mirror',
-	),
-	array(
-		'num'   => '06',
-		'title' => 'The little extras',
-		'text'  => 'A welcome snack and hot-drinks basket on arrival, plus a utility cupboard with iron, ironing board, airer and hangers.',
-		'img'   => 'welcome-snack-basket',
-		'alt'   => 'Welcome snack and hot drinks basket',
-		'img2'  => 'utility-cupboard-iron-board',
-		'alt2'  => 'Utility cupboard with iron, ironing board and airer',
-	),
-);
-
-$details = array(
-	array( 'kitchen-fridge-freezer', 'Fridge-freezer and kitchen shelving' ),
-	array( 'living-room-artwork-lamp', 'Living room artwork and lamp' ),
-	array( 'breakfast-bar-kettle', 'Kettle at the breakfast bar' ),
-	array( 'bathroom-toilet-towel-rail', 'Heated towel rail' ),
-	array( 'bedroom-towels-detail', 'Fresh towels folded on the bed' ),
-	array( 'kitchen-cupboard-crockery-pans', 'Crockery and pans in the kitchen cupboard' ),
-	array( 'entrance-intercom-thermostat', 'Entrance intercom and thermostat' ),
-	array( 'bathroom-wall-sign', 'Bathroom wall sign' ),
-);
 ?>
 <main id="main" class="site-main home">
 
@@ -90,7 +22,7 @@ $details = array(
 			</h1>
 			<p class="hero__lede" data-hero-in>A self-contained one-bedroom flat in Ibex House. Step through the door and take the tour.</p>
 			<div class="hero__actions" data-hero-in>
-				<a class="btn btn--solid" href="<?php echo esc_url( fitaa_booking_url() ); ?>">Book your stay</a>
+				<a class="btn btn--solid" href="<?php echo esc_url( fitaa_booking_url( 'fitaa-house-southampton' ) ); ?>">Book your stay</a>
 				<a class="btn btn--ghost" href="#tour">Take the tour</a>
 			</div>
 		</div>
@@ -120,31 +52,7 @@ $details = array(
 	</section>
 
 	<!-- 3. SCROLL-THROUGH OF THE ROOMS --------------------------------- -->
-	<section class="tour" id="tour" data-tour aria-label="<?php esc_attr_e( 'A tour of the flat', 'fitaa' ); ?>">
-		<div class="tour__sticky" data-tour-sticky>
-			<div class="tour__head container">
-				<p class="eyebrow">The tour</p>
-				<p class="tour__count"><span data-tour-current>01</span><span class="tour__sep">/</span><span>06</span></p>
-			</div>
-			<div class="tour__axis" aria-hidden="true"></div>
-			<div class="tour__track" data-tour-track>
-				<?php foreach ( $rooms as $room ) : ?>
-					<article class="room" data-room>
-						<div class="room__media">
-							<?php fitaa_photo( $room['img'], $room['alt'], array( 'class' => 'room__img room__img--main' ) ); ?>
-							<?php fitaa_photo( $room['img2'], $room['alt2'], array( 'class' => 'room__img room__img--inset' ) ); ?>
-						</div>
-						<div class="room__copy">
-							<span class="room__num"><?php echo esc_html( $room['num'] ); ?></span>
-							<h3 class="room__title"><?php echo esc_html( $room['title'] ); ?></h3>
-							<p><?php echo esc_html( $room['text'] ); ?></p>
-						</div>
-					</article>
-				<?php endforeach; ?>
-			</div>
-			<div class="tour__bar" aria-hidden="true"><span data-tour-bar></span></div>
-		</div>
-	</section>
+	<?php get_template_part( 'template-parts/property-tour', null, array( 'property' => 'fitaa-house-southampton' ) ); ?>
 
 	<!-- 4. ONE BED, TWO WAYS ------------------------------------------- -->
 	<section class="bed section" id="bed" data-bed>
@@ -166,30 +74,25 @@ $details = array(
 	</section>
 
 	<!-- 5. DETAILS ------------------------------------------------------ -->
-	<section class="details section" aria-label="<?php esc_attr_e( 'Details', 'fitaa' ); ?>">
-		<div class="container">
-			<p class="eyebrow" data-reveal>In the details</p>
-			<h2 class="display display--sm" data-split><?php echo fitaa_split_words( 'Small things, thought through.' ); // phpcs:ignore WordPress.Security.EscapeOutput ?></h2>
-		</div>
-		<div class="details__grid container">
-			<?php foreach ( $details as $i => $d ) : ?>
-				<figure class="detail detail--<?php echo (int) $i; ?>" data-detail>
-					<?php fitaa_photo( $d[0], $d[1], array( 'class' => 'detail__img' ) ); ?>
-					<figcaption><?php echo esc_html( $d[1] ); ?></figcaption>
-				</figure>
-			<?php endforeach; ?>
-		</div>
-	</section>
+	<?php get_template_part( 'template-parts/property-details', null, array( 'property' => 'fitaa-house-southampton' ) ); ?>
 
 	<!-- 6. BOOK --------------------------------------------------------- -->
-	<section class="cta section">
-		<div class="container cta__inner">
-			<p class="eyebrow" data-reveal>Stay with Fitaa Homes</p>
-			<h2 class="display" data-split><?php echo fitaa_split_words( 'Ready when you are.' ); // phpcs:ignore WordPress.Security.EscapeOutput ?></h2>
-			<p data-reveal>A night, a month or longer. Tell us your dates and we will come back to you.</p>
-			<div class="cta__actions" data-reveal>
-				<a class="btn btn--solid" href="<?php echo esc_url( fitaa_booking_url() ); ?>">Book Fitaa House</a>
-				<a class="btn btn--ghost" href="<?php echo esc_url( fitaa_stays_url() ); ?>">Stays &amp; long-term rentals</a>
+	<?php
+	get_template_part( 'template-parts/booking-widget', null, array(
+		'property' => 'fitaa-house-southampton',
+		'heading'  => 'Choose your dates.',
+	) );
+	?>
+
+	<!-- 6b. OUR OTHER HOME --------------------------------------------- -->
+	<section class="other section">
+		<div class="container other__inner">
+			<div class="other__media" data-parallax><?php fitaa_prop_photo( 'sa-endeavours', 'living-room-wide', 'The living room at SA Endeavours' ); ?></div>
+			<div>
+				<p class="eyebrow" data-reveal>Also from Fitaa</p>
+				<h2 class="display display--sm" data-split><?php echo fitaa_split_words( 'Looking for more space? Meet SA Endeavours.' ); // phpcs:ignore WordPress.Security.EscapeOutput ?></h2>
+				<p data-reveal>Two bedrooms, a full kitchen, a dining table and a marble-tiled bathroom.</p>
+				<a class="btn btn--ghost" data-reveal href="<?php echo esc_url( fitaa_sa_url() ); ?>">See SA Endeavours</a>
 			</div>
 		</div>
 	</section>

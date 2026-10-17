@@ -15,6 +15,8 @@ require_once FITAA_DIR . '/inc/setup.php';
 require_once FITAA_DIR . '/inc/enqueue.php';
 require_once FITAA_DIR . '/inc/customizer.php';
 require_once FITAA_DIR . '/inc/helpers.php';
+require_once FITAA_DIR . '/inc/properties.php';
+require_once FITAA_DIR . '/inc/booking.php';
 require_once FITAA_DIR . '/inc/landlord-form.php';
 require_once FITAA_DIR . '/inc/pages.php';
 require_once FITAA_DIR . '/inc/woocommerce.php';

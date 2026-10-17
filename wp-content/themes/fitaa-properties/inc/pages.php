@@ -8,6 +8,7 @@ defined( 'ABSPATH' ) || exit;
 add_action( 'after_switch_theme', function () {
 	$defs = array(
 		'home'      => array( 'Fitaa House Southampton', 'home', '' ),
+		'sa'        => array( 'SA Endeavours', 'sa-endeavours', 'page-sa-endeavours.php' ),
 		'landlords' => array( 'Landlords', 'landlords', 'page-landlords.php' ),
 		'stays'     => array( 'Stays & Rentals', 'stays', 'page-stays.php' ),
 	);
@@ -39,7 +40,7 @@ add_action( 'after_switch_theme', function () {
 	if ( ! has_nav_menu( 'primary' ) && ! wp_get_nav_menu_object( 'Fitaa primary' ) ) {
 		$menu_id = wp_create_nav_menu( 'Fitaa primary' );
 		if ( ! is_wp_error( $menu_id ) ) {
-			foreach ( array( 'home', 'stays', 'landlords' ) as $key ) {
+			foreach ( array( 'home', 'sa', 'stays', 'landlords' ) as $key ) {
 				if ( ! empty( $ids[ $key ] ) && ! is_wp_error( $ids[ $key ] ) ) {
 					wp_update_nav_menu_item( $menu_id, 0, array(
 						'menu-item-title'     => 'home' === $key ? 'Fitaa House' : get_the_title( $ids[ $key ] ),
