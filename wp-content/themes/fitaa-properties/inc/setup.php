@@ -37,6 +37,10 @@ add_action( 'widgets_init', function () {
 /** Body classes so CSS/JS can key off the page type. */
 add_filter( 'body_class', function ( $classes ) {
 	$classes[] = 'fitaa-theme';
+	// Pages that open on a full-bleed dark photo hero: the header starts in its dark variant.
+	if ( is_front_page() || is_page_template( 'page-sa-endeavours.php' ) ) {
+		$classes[] = 'fitaa-hero';
+	}
 	return $classes;
 } );
 

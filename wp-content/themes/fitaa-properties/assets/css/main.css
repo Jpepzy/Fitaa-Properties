@@ -22,7 +22,7 @@
 }
 
 /* Dark sections (photo hero, room tour, landlord band, header over the hero) swap the same tokens. */
-.hero, .tour, .landlord-band, .home .site-header:not(.is-scrolled) {
+.hero, .tour, .landlord-band, .fitaa-hero .site-header:not(.is-scrolled) {
 	--bg: #0d0610;
 	--surface: #160a1b;
 	--panel: #1e0e24;
