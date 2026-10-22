@@ -19,6 +19,8 @@ add_action( 'customize_register', function ( WP_Customize_Manager $wp_customize 
 		'fitaa_youtube'   => array( __( 'YouTube URL', 'fitaa' ), 'esc_url_raw' ),
 		'fitaa_linkedin'  => array( __( 'LinkedIn URL', 'fitaa' ), 'esc_url_raw' ),
 		'fitaa_lead_to'   => array( __( 'Landlord enquiries go to (email)', 'fitaa' ), 'sanitize_email' ),
+		'fitaa_registered_office' => array( __( 'Registered office address (shown in the footer, required for a limited company)', 'fitaa' ), 'sanitize_text_field' ),
+		'fitaa_creative_url'      => array( __( 'Fitaa Creative website (footer "Website by" link)', 'fitaa' ), 'esc_url_raw' ),
 	);
 
 	foreach ( $fields as $id => $field ) {

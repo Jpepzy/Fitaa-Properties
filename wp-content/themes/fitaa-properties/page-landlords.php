@@ -45,7 +45,7 @@ $compare = array(
 				<span class="line"><span class="line__i" data-hero-line>Your property.</span></span>
 				<span class="line"><span class="line__i" data-hero-line><em>Guaranteed rent.</em></span></span>
 			</h1>
-			<p class="page-hero__lede" data-hero-in>We are building the Fitaa Properties portfolio and want more homes to look after. Partner with us for dependable income and a genuinely hands-off experience.</p>
+			<p class="page-hero__lede" data-hero-in>We are building the Fitaa Homes portfolio and want more homes to look after. Partner with us for dependable income and a genuinely hands-off experience.</p>
 			<div class="hero__actions" data-hero-in>
 				<a class="btn btn--solid" href="#enquire">Get your offer</a>
 				<a class="btn btn--ghost" href="#benefits">See what you get</a>

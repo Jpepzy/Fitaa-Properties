@@ -15,7 +15,8 @@ Tick items off as they are done (`- [x]`). Items marked **(owner)** need a decis
 
 - [ ] Choose hosting with PHP 8.1+ and HTTPS (WordPress-friendly managed host recommended)
 - [ ] Register or point the domain; enable SSL and force HTTPS
-- [ ] Install WordPress; set site title, tagline, timezone (London) and date format
+- [ ] Install WordPress; set site title to **Fitaa Homes**, tagline, timezone (London) and date format
+- [ ] Point fitaahomes.com at the site; redirect properties.fitaaglobal.com to it
 - [ ] Upload `wp-content/themes/fitaa-properties` and activate it (this creates the pages and menu)
 - [ ] Settings → Permalinks → "Post name", then save
 - [ ] Settings → Reading → confirm "Fitaa House Southampton" is the homepage
@@ -23,6 +24,9 @@ Tick items off as they are done (`- [x]`). Items marked **(owner)** need a decis
 - [ ] Set up a staging copy before changing anything live
 
 ## 2. Information I need from the owner (owner)
+
+- [ ] Registered office address of Fitaa Properties Ltd for the footer (Customizer → "Registered office address"); a limited company's website must show it
+- [ ] Fitaa Creative website link for the "Website by Fitaa Creative" footer credit (Customizer → "Fitaa Creative website")
 
 - [ ] Public email, phone and WhatsApp number
 - [ ] Social profile links: Instagram, Facebook, TikTok, X, YouTube, LinkedIn (only the ones you use)

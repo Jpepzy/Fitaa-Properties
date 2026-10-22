@@ -1,6 +1,6 @@
 # Fitaa Properties
 
-WordPress + WooCommerce site for **Fitaa Properties**, a property company that:
+WordPress + WooCommerce site for **Fitaa Homes**, the public brand of **Fitaa Properties Ltd**, a property company that:
 
 1. runs **Fitaa Homes** — furnished short stays (two homes so far: **Fitaa House Southampton** and **SA Endeavours**),
 2. offers **long-term rentals**, and
@@ -13,6 +13,7 @@ Git workflow: commit straight to `main` (the default branch). No PRs unless aske
 - **Look:** light and warm, coloured from the Fitaa Homes logo. Warm-white pages, plum and magenta accents, near-black text like the logo's house outline. The photo hero, the room tour and the landlord band stay dark for contrast.
 - **Palette** (CSS variables in `assets/css/main.css`): `--bg #fbf8fb`, `--surface #f4eef5`, `--panel #ffffff`, `--text #1a1220`, `--text-2 #43384a`, `--muted #6e6275`, `--accent #5a0a6a` (logo plum), `--accent-2 #8e1fa8` (logo magenta), `--btn` (magenta to plum gradient). Dark sections (`.hero`, `.tour`, `.landlord-band`, the header over the homepage hero) redefine the same variables, so components just use the variables. Every text colour has been checked for at least 4.5:1 contrast on its background.
 - **Type:** Fraunces (light serif, italics for emphasis words) for display; Manrope for body and UI.
+- **Name:** the public brand is **Fitaa Homes** everywhere a visitor reads it (header, footer, page copy, site title, domain fitaahomes.com). Fitaa Properties Ltd is the legal company and appears only in the footer line "Fitaa Homes is a trading name of Fitaa Properties Ltd, registered in England and Wales, company no. 16386950" and on contracts and invoices. Do not write "Fitaa Properties" in visitor-facing copy. The footer also carries "Website by Fitaa Creative" (link from the Customizer).
 - **Logo:** the real Fitaa Homes logo (purple Gye Nyame in a black house outline) lives in `images/brand/` (original as supplied) and the theme's `assets/img/brand/` (header mark, footer lockup, favicon). Never redraw or recolour the mark. It is a raster on an off-white background: in the header it sits on a small white tile (`.brand__mark`), in the light footer it sits straight on the page (`mix-blend-mode: multiply`). Never put it directly on a dark section. A transparent SVG is still to come.
 - **Core pillars and values:** four words we write and design to. Use them for About copy, landlord pitches and decisions about the site.
   1. **Rooted** (kept as given). Home starts with belonging. Our mark is a Gye Nyame inside a house outline: heritage at the centre of the home. We put down roots in the places we work and keep long relationships with guests, tenants and landlords.

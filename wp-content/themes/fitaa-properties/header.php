@@ -14,12 +14,12 @@
 
 <header class="site-header" data-header>
 	<div class="site-header__inner">
-		<a class="brand" href="<?php echo esc_url( home_url( '/' ) ); ?>" aria-label="<?php esc_attr_e( 'Fitaa Properties home', 'fitaa' ); ?>">
+		<a class="brand" href="<?php echo esc_url( home_url( '/' ) ); ?>" aria-label="<?php esc_attr_e( 'Fitaa Homes home', 'fitaa' ); ?>">
 			<?php if ( has_custom_logo() ) : ?>
 				<?php the_custom_logo(); ?>
 			<?php else : ?>
 				<span class="brand__mark" aria-hidden="true"><img src="<?php echo esc_url( FITAA_URI . '/assets/img/brand/fitaa-homes-mark-96.png' ); ?>" srcset="<?php echo esc_url( FITAA_URI . '/assets/img/brand/fitaa-homes-mark-192.png' ); ?> 2x" width="48" height="48" alt=""></span>
-				<span class="brand__text">Fitaa <em>Properties</em></span>
+				<span class="brand__text">Fitaa <em>Homes</em></span>
 			<?php endif; ?>
 		</a>
 

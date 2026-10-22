@@ -312,6 +312,10 @@ p { margin: 0 0 1.2rem; color: var(--text-2); }
 .site-footer__list li { margin-bottom: .55rem; }
 .site-footer__list a { color: var(--text-2); } .site-footer__list a:hover { color: var(--accent); }
 .site-footer__base { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 1rem; padding-block: 1.6rem; border-top: 1px solid var(--line); color: var(--muted); font-size: .82rem; }
+.site-footer__legal { display: grid; gap: .3rem; max-width: 46rem; }
+.site-footer__credit { margin: 0; color: var(--muted); font-size: .82rem; }
+.site-footer__credit a { color: var(--accent); font-weight: 600; text-decoration: underline; text-underline-offset: 3px; }
+.site-footer__credit a:hover { color: var(--accent-2); }
 .site-footer__menu { display: flex; gap: 1.2rem; list-style: none; margin: 0; padding: 0; }
 
 /* Responsive */
