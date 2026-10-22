@@ -26,7 +26,7 @@ Tick items off as they are done (`- [x]`). Items marked **(owner)** need a decis
 ## 2. Information I need from the owner (owner)
 
 - [ ] Registered office address of Fitaa Properties Ltd for the footer (Customizer → "Registered office address"); a limited company's website must show it
-- [ ] Fitaa Creative website link for the "Website by Fitaa Creative" footer credit (Customizer → "Fitaa Creative website")
+- [x] Fitaa Creative website link for the footer credit: https://fitaacreative.com (set as the default; can be changed in the Customizer)
 
 - [ ] Public email, phone and WhatsApp number
 - [ ] Social profile links: Instagram, Facebook, TikTok, X, YouTube, LinkedIn (only the ones you use)

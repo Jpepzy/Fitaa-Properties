@@ -24,7 +24,8 @@ add_action( 'customize_register', function ( WP_Customize_Manager $wp_customize 
 	);
 
 	foreach ( $fields as $id => $field ) {
-		$wp_customize->add_setting( $id, array( 'default' => '', 'sanitize_callback' => $field[1] ) );
+		$defaults = array( 'fitaa_creative_url' => 'https://fitaacreative.com' );
+		$wp_customize->add_setting( $id, array( 'default' => isset( $defaults[ $id ] ) ? $defaults[ $id ] : '', 'sanitize_callback' => $field[1] ) );
 		$wp_customize->add_control( $id, array(
 			'label'   => $field[0],
 			'section' => 'fitaa_contact',

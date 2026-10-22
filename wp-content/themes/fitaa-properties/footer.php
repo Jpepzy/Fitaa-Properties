@@ -38,7 +38,7 @@
 			</span>
 		</div>
 		<p class="site-footer__credit">
-			<?php $creative = get_theme_mod( 'fitaa_creative_url', '' ); ?>
+			<?php $creative = get_theme_mod( 'fitaa_creative_url', 'https://fitaacreative.com' ); ?>
 			<?php esc_html_e( 'Website by', 'fitaa' ); ?>
 			<?php if ( $creative ) : ?>
 				<a href="<?php echo esc_url( $creative ); ?>" target="_blank" rel="noopener">Fitaa Creative</a>
